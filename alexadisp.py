@@ -45,18 +45,18 @@ while True:
         pygame.mixer.music.play()
         sleep(10)                                   #Delay till customer fills the name
         uname= getcustomername(custid)
-        tkinter.Label(window, text = "Username: ").grid(row = 0)
-        tkinter.Label(window, text = str(uname)).grid(row = 0, column=1)
+        tkinter.Label(window, text = "Username: ").grid(row = 2)
+        tkinter.Label(window, text = str(uname)).grid(row = 2, column=1)
 
         formname= getformname(custid)
-        tkinter.Label(window, text = "FormName : ").grid(row = 1)
-        tkinter.Label(window, text = str(formname)).grid(row = 1, column=1)
+        tkinter.Label(window, text = "FormName : ").grid(row = 3)
+        tkinter.Label(window, text = str(formname)).grid(row = 3, column=1)
 
         formdata= getformdata(formid)
-        tkinter.Label(window, text = "Form Details :").grid(row = 2)
-        tkinter.Label(window, text = str(formdata)).grid(row = 2, column=1)        
+        tkinter.Label(window, text = "Form Details :").grid(row = 4)
+        tkinter.Label(window, text = str(formdata)).grid(row = 4, column=1)        
         sleep(10)
 	elif i==1:               #When output from PIR is LOW, i.e no motion
 	    sleep(2)
-window.mainloop()
-time.sleep(0.1)
+	window.mainloop()
+	time.sleep(0.1)
