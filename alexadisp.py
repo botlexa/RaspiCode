@@ -7,7 +7,7 @@ import json
 import tkinter
 import pygame
 
-from db_util import make_conn, fetch_one_row_data, fetch_data, fetch_custom_data, execute_query, execute_query_value
+from db_util import make_conn, fetch_one_row_data, fetch_data, execute_query
 
 window = tkinter.Tk()
 window.title("Alexa Automated Form Filling Software")
