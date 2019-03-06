@@ -25,7 +25,7 @@ def getcustomername(custid):
     return result
 def getformname(custid):
      conn = make_conn()
-     query_cmd = "select TemplateName from TemplateMaster where UserID" = + str(custid)+';'
+     query_cmd = "select TemplateName from TemplateMaster where UserID" + str(custid)+';'
      result = fetch_data(conn, query_cmd)
      conn.close()
 def getformdata(formid):
@@ -41,21 +41,21 @@ def getformdata(formid):
 while True:
 	i=GPIO.input(11)
 	if i==1:                                        #When output from PIR is HIGH,i.e customer is sitting infront of the alexa
-        pygame.mixer.music.load("invokealexa.wav")  #Wav file which contains the alexa voice activation command
-        pygame.mixer.music.play()
-        sleep(10)                                   #Delay till customer fills the name
-        uname= getcustomername(custid)
-        tkinter.Label(window, text = "Username: ").grid(row = 2)
-        tkinter.Label(window, text = str(uname)).grid(row = 2, column=1)
+            pygame.mixer.music.load("invokealexa.wav")  #Wav file which contains the alexa voice activation command
+            pygame.mixer.music.play()
+            sleep(10)                                   #Delay till customer fills the name
+            uname= getcustomername(custid)
+            tkinter.Label(window, text = "Username: ").grid(row = 2)
+            tkinter.Label(window, text = str(uname)).grid(row = 2, column=1)
 
-        formname= getformname(custid)
-        tkinter.Label(window, text = "FormName : ").grid(row = 3)
-        tkinter.Label(window, text = str(formname)).grid(row = 3, column=1)
+            formname= getformname(custid)
+            tkinter.Label(window, text = "FormName : ").grid(row = 3)
+            tkinter.Label(window, text = str(formname)).grid(row = 3, column=1)
 
-        formdata= getformdata(formid)
-        tkinter.Label(window, text = "Form Details :").grid(row = 4)
-        tkinter.Label(window, text = str(formdata)).grid(row = 4, column=1)        
-        sleep(10)
+            formdata= getformdata(formid)
+            tkinter.Label(window, text = "Form Details :").grid(row = 4)
+            tkinter.Label(window, text = str(formdata)).grid(row = 4, column=1)        
+            sleep(10)
 	elif i==1:               #When output from PIR is LOW, i.e no motion
 	    sleep(2)
 	window.mainloop()
